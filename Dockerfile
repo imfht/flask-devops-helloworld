@@ -1,5 +1,6 @@
 FROM python:latest
-RUN pip install flask
+WORKDIR /
+RUN git clone https://github.com/imfht/flask-devops-helloworld /app/
 WORKDIR /app/
-RUN COPY ./app.py /app/
+RUN pip install -r requirements.txt
 CMD ['python','app.py']
